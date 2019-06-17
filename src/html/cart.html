@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <title>我的购物车_乐蜂网</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="../css/build_global.css" />
+    <link rel="stylesheet" type="text/css" href="../css/cart.css" />
+</head>
+
+<body style="background:#fff;" class="Wmin">
+    <div class="cart-top">
+        <div class="Chead-info">
+            <div class="Chead-info-box" style="width:1000px;margin:0 auto">
+                <!--手机乐蜂-->
+                <a class="Chead-app" href="javascript:;">手机乐蜂</a>
+                <div class="Chead-appDown" style="display:none;">
+                    <div>
+                        <img src="http://h5rsc.vipstatic.com/lefeng_pc/images/page/xz_icon_for_lf.jpg" width="112" height="112" />
+                        <h6>
+                            <b class="i1"></b><b class="i2"></b>客户端
+                        </h6>
+                    </div>
+                    <span class="fast-nav turl"><a class="Chead-app" href="javascript:;">手机乐蜂</a></span>
+                </div>
+                <!-- 收藏乐蜂 -->
+                <span class="Chead-save" id="Chead-save">收藏乐蜂</span>
+                <!-- 快速导航 -->
+                <span class="fast-nav turl" id="Chead_fastnav">快速导航<i></i></span>
+                <div class="Chead-floatmenu" style="display:none;">
+                    <div>
+                        <a href="javasript:;">帮助中心</a>
+                        <a href="javasript:;">联系客服</a>
+                        <a href="javasript:;">商务合作</a>
+                        <h6>
+                            <img src="http://h5rsc.vipstatic.com/lefeng_pc/images/page/wx_icon_for_lf.jpg" width="112" height="112" /> <b>惊喜码上来</b>
+                        </h6>
+                    </div>
+                    <span class="fast-nav turl" style="color:#666666;">快速导航<i></i></span>
+                </div>
+                <!-- 我的订单-->
+                <a class="turl Chead_myh" href="javasript:;">我的订单<i></i></a>
+                <div class="Chead-myhome" style="display:none;">
+                    <a class="turl" href="javasript:;">我的订单<i></i></a>
+                    <a href="javasript:;">我的钱包</a>
+                    <a href="javasript:;">我的礼券</a>
+                </div>
+                <span class="Chead-welcome" id="Chead-welcome1">欢迎来到乐蜂，请&nbsp;
+                    <a href="login.html" class="welcome1">登录</a>&nbsp;
+                    <a href="registor.html" class="welcome2">免费注册</a>
+                </span>
+                <span class="Chead-welcome" id="Chead-welcome2">嗡，欢迎来乐蜂&nbsp;
+                        <a href="javascript:;" class="welcome1"></a>&nbsp; | &nbsp;
+                        <a href="javascript:;" class="welcome2">退出登录</a>
+                </span>
+            </div>
+        </div>
+        <div class="cart-main">
+            <div class="cart-logo">
+                <a href="javasript:;"></a>
+            </div>
+            <div class="cart-step step01">
+            </div>
+            <!--step01查看购物车 step02确认订单信息 step03成功提交订单-->
+        </div>
+    </div>
+    <!-- 头部结束 -->
+    <!-- header  结束-->
+    <div class="w1000" id="shopping_cart_contain">
+        <div class="cart-t"><i></i>请在<b id="countDown"></b> 内提交订单，下单后您另有30分钟的支付时间。
+            <span id="testDJS"></span></div>
+        <div class="cart-x">
+            <div class="tit" id="cart_list_head">
+                <table>
+                    <tr>
+                        <th class="td01">商品信息</th>
+                        <th class="td02">单价</th>
+                        <th class="td03">数量</th>
+                        <th class="td04">小计</th>
+                        <th class="td05">操作</th>
+                    </tr>
+                </table>
+            </div>
+            <div id="cart_list_temp"></div>
+            <!-- 中间商品数据由js拼接出来 -->
+            <div class="orders" id="shopping_cart_active">
+                <p id="shopping_cart_fee" style="display: none">
+                    <span class="u-y">运费</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="cart-j">
+            <div class="cart-b">
+                <ul id="amount_cart"></ul>
+            </div>
+            <div class="cart-b cart-bt">
+                <ul id="totalPayPrice"></ul>
+            </div>
+            <div class="cart-js">
+                <div class="fl"><a href="index.html">继续购物</a>
+                    <a href="#"></a>
+                </div>
+                <div class="fr">
+                    <span id="cleanCart" style="display:none;"> 
+                    结算时间已过，购物车被清空了~重新
+                    <input name="" type="button" value="挑选商品" class="txsp" />
+                </span>
+                    <input name="" type="button" value="立即结算" class="pre" id="settlement" />
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--弹窗-->
+    <div class="cart-jscs" style="display:none">
+        <i></i>
+        <div class="box">
+            <div class="tit">结算超时<span></span></div>
+            <p>结算超时，物车已被清空~重新挑选商品</p>
+            <input name="" type="button" value="关闭" class="over" />
+        </div>
+    </div>
+    <!--删除-->
+    <div class="cart-jscs" style="display:none">
+        <i></i>
+        <div class="box">
+            <div class="tit">删除<span></span></div>
+            <p>删掉的商品可能被别人抢走哦~要删除吗？</p>
+            <div class="but">
+                <input name="" type="button" value="删除" class="over" />
+                <input name="" type="button" value="先留着" class="hy" /></div>
+        </div>
+    </div>
+
+    <!--弹窗-->
+    <div class="cart-jscs" id="overTime" style="display:none">
+        <i></i>
+        <div class="box">
+            <div class="tit">结算超时<span id="refreshCart"></span></div>
+            <p>结算超时，购物车已被清空~重新挑选商品</p>
+            <p><input name="" type="button" id="reSelectGoods" value="重新挑选商品" class="over" /></p>
+        </div>
+    </div>
+
+    <!--删除-->
+    <div class="cart-jscs" id="delWindow" style="display:none">
+        <i></i>
+        <div class="box">
+            <div class="tit">删除<span></span></div>
+            <p>删掉的商品可能被别人抢走哦~要删除吗？</p>
+            <div class="but">
+                <input name="" type="button" id="delBtnShopping" value="删除" class="over" />
+                <input name="" id="noRemoveShopping" type="button" value="先留着" class="hy" />
+            </div>
+        </div>
+    </div>
+    <div class="cart4-no" style="display: none">
+        <div class="fl"></div>
+        <div class="fr">
+            <h1>您的购物车里没有商品，请先去挑选心爱的商品吧！</h1>
+            <div class="lia">您可以<a href="index.html">返回首页</a>挑选喜欢的商品，或者</div>
+            <div class="lib">
+                <input name="" id="cart-search-submit" type="button" class="button">
+                <input name="" autocomplete="off" id="search-cart" type="text" class="text">
+                <div id="cartAuto" class="cart-auto"></div>
+            </div>
+        </div>
+    </div>
+
+    <input value="871BC179C80389F945D01B39D062380ACD28F20B" type="hidden" id="userToken" />
+    <input value="" type="hidden" id="brandCoupon" />
+    <input value="" type="hidden" id="favourableId" />
+
+    <!--加入购物车成功-->
+    <div class="alt-succ" id="addsuccess" style="display:none;">
+        <div class="sum">
+            <h3>该商品已成功放入购物车</h3>
+            <p>购物车共 <b>1</b> 件商品&nbsp;&nbsp;合计：<b></b> 元</p>
+            <p><a class="pay" href="javasript:;">去结算</a>
+                <a href="javascript:;">&lt;&lt;继续购物</a></p>
+            <span class="succ-ico"></span>
+        </div>
+        <a class="succ-close" href="javascript:;">关闭</a>
+    </div>
+    <!--加入购物车失败-->
+    <div class="alt-succ failure" style="display: none;">
+        <div class="sum">
+            <h3><span class="succ-ico"></span>加入购物车失败请稍后再试</h3>
+        </div>
+        <a class="succ-close" href="javascript:;">关闭</a>
+    </div>
+
+
+    <!--页尾-->
+    <div class="Cfooter">
+        <div class="Cfooter-cr">
+            <a href="javasript:;" target="_blank">关于乐蜂</a>
+            <a href="javasript:;" target="_blank">免责声明</a>
+            <a href="javasript:;" target="_blank">隐私声明</a>
+            <a href="javasript:;" target="_blank">版权声明</a>
+            <a href="javasript:;" target="_blank">招聘信息</a>
+            <a href="javasript:;" target="_blank">联系我们</a>
+            <a href="javasript:;" target="_blank">帮助中心</a>
+            <a href="javasript:;" target="_blank">友情链接</a>
+            <br>
+            <span>Copyright <b>&copy;</b> 2008-2016 Lefeng.com All Rights Reserved.</span>
+            <span>乐蜂（上海）信息技术有限公司</span>
+            <a href="javasript:;" target="_blank">津ICP备15005555号-1</a> &nbsp;&nbsp;
+            <span>京公网安备11010502014183</span>
+            <a href="javascript:;" target="_blank" rel="nofollow">营业执照</a>
+            <div class="Cfooter-cr-img">
+                <a id="___szfw_logo___" class="cxwz" target="_blank" href="javascript:;"></a>
+                <a class="kxwz" target="_blank" href="javascript:;"></a>
+                <a class="pjzxlm" target="_blank" href="javascript:;"></a>
+                <a class="itrust" target="_blank" href="javascript:;">中国互联网信用评价中心</a>
+                <a href="javascript:;" target="_blank" class="xfwq"></a>
+            </div>
+        </div>
+    </div>
+    <!--页尾-->
+    <!--页尾-->
+    <script src="../script/thirdplugins/jquery.js"></script>
+    <script src="../script/thirdplugins/jquery.cookie.js"></script>
+    <script src="../script/js/login_status.js"></script>
+    <script src="../script/js/mouseover.js"></script>
+    <script src="../script/js/cart.js"></script>
+</body>
+
+</html>

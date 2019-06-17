@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>登录_乐蜂网</title>
+    <link href="../css/loginregist.css" rel="stylesheet" type="text/css" />
+    <link href="../css/page_global.css" rel="stylesheet" type="text/css" />
+    <!--[if (IE 7)|(IE 8)]>
+<link href="css/css3.css" rel="stylesheet" />
+<![endif]-->
+
+
+</head>
+
+<body class="bodyBk login">
+
+    <div class="Chead-info">
+
+        <div class="Chead-info-box">
+            <!--手机乐蜂 --><a class="Chead-app" href="javascript:;">手机乐蜂</a>
+            <div class="Chead-appDown" style="display:none;">
+                <div>
+                    <img src="http://h5rsc.vipstatic.com/lefeng_pc/images/page/xz_icon_for_lf.jpg" height="112" width="112" />
+                    <h6>
+                        <b class="i1"></b><b class="i2"></b>客户端
+                    </h6>
+                    <!--<a href="http://www.lefeng.com/help/mobileDownload.html" target="_blank">立即下载 </a> -->
+                </div>
+                <span class="fast-nav turl"><a class="Chead-app" href="javascript:;">手机乐蜂</a></span>
+            </div>
+            <!-- 收藏乐蜂 --><span class="Chead-save" id="Chead-save">收藏乐蜂</span>
+            <!-- 快速导航 --><span class="fast-nav turl" id="Chead_fastnav">快速导航<i></i></span>
+            <div class="Chead-floatmenu" style="display:none;">
+                <div id="floatmenucon">
+                    <a href="javascript:;">帮助中心</a>
+                    <a href="javascript:;l">联系客服</a>
+                    <a href="javascript:;">商务合作</a>
+                    <h6>
+                        <img src="http://h5rsc.vipstatic.com/lefeng_pc/images/page/wx_icon_for_lf.jpg" height="112" width="112" /> <b>惊喜码上来</b>
+                    </h6>
+                </div>
+                <span class="fast-nav turl" style="color:#666666;">快速导航<i></i></span>
+            </div>
+            <a class="turl" href="oindex.html">乐蜂首页</a>
+        </div>
+    </div>
+
+
+    <div class="Logo-r">
+        <div class="Logo-info-r">
+            <a href="javascript:;"></a>
+        </div>
+    </div>
+    <div class="loginBk">
+        <div class="warp">
+            <input type="hidden" id="errorCode" name="errorCode" value="">
+            <input type="hidden" id="code" name="code" value="50001">
+            <input type="hidden" id="msg" name="msg" value="校验码安全警告">
+            <form id="loginform" method="post" name="loginform" action="http://10.31.164.23/lefengwang/php/login.php">
+                <div class="css3 loginContent">
+                    <div class="loginTitle"><span class="lc2"></span>
+                        <span class="lcr">
+                            <a id="reg_link" href="registor.html">免费注册</a>
+                        </span>
+                    </div>
+                    <ul class="loginInput">
+                        <div class="mailtips" id="mailtips" style="display:none;"></div>
+                        <li class="mailwrap">
+                            <h2>手机号</h2>
+                            <input type="text" name="loginName" id="loginName" value="" tabindex="1" autocomplete="off" />
+                            <div class="focus_text loginNameFlag successShowFlag" id="loginNameSuccessShow" style="display:none;"></div>
+                            <div class="errorIcon loginNameFlag" id="loginNameSuccessPic" style="display: none;"></div>
+                            <div class="errorTips error loginNameFlag" id="loginNameErrorShow" style="display:none;"></div>
+                            <div class="errorIcon no loginNameFlag" id="loginNameErrorPic" style="display: none;"></div>
+                        </li>
+                        <li class="pwwrap">
+                            <h2>密码</h2>
+                            <div class="newsTips"><a target="_blank" href="javascript:;">忘记密码?</a></div>
+                            <input type="password" name="passwd" id="passwd" value="" tabindex="2" />
+                            <div class="focus_text passwdFlag successShowFlag" id="passwdSuccessShow" style="display: none;"></div>
+                            <div class="errorIcon passwdFlag" id="passwdSuccessPic" style="display: none;"></div>
+                            <div class="errorTips error passwdFlag" id="passwdErrorShow" style="display: none;"></div>
+                            <div class="errorIcon no passwdFlag" id="passwdErrorPic" style="display: none;"></div>
+                        </li>
+                        <li class="yzmwrap" id="yzmSpan">
+                            <h2>
+                                验证码
+                            </h2>
+                            <input type="text" name="yzm" id="yzm" maxlength="4" />
+                            <span class="spanyzm"> 
+                                    <a href="javaScript:;" id="yzmPic">
+                                        <div class="inyzm"></div>
+                                    </a>
+                                <a href="javaScript:;" id="changeYzm">看不清?<br/>换一张</a>
+                            </span>
+                            <div class="focus_text yzmFlag successShowFlag" id="yzmSuccessShow" style="display: none;"></div>
+                            <div class="errorIcon yzmFlag" id="yzmSuccessPic" style="display: none;"></div>
+                            <div class="errorTips error yzmFlag" id="yzmErrorShow" style="display: none;"></div>
+                            <div class="errorIcon no yzmFlag" id="yzmErrorPic" style="display: none;"></div>
+                        </li>
+                        <li class="buttonwrap">
+                            <a href="javascript:;" id="formSubmit">登录</a>
+                        </li>
+                        <li class="partners">
+                            <p>合作网站账号登录</p>
+                            <span class="par_9"><a href="javaScript:;" id="weiXinLogin"><i></i>微信</a></span>
+                            <span class="par_2"><a  href="javaScript:;" id="qqLogin"><i></i>QQ</a></span>
+                            <span class="par_3"><a  href="javaScript:;" id="sinaLogin"><i></i> 新浪微博</a></span>
+                            <span class="par_1" style="display: none;"><a  href="javaScript:;" id="alipayLogin">
+                            <i></i> 支付宝</a></span>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- 尾部 -->
+    <div class="Cfooter loginfooter">
+        <div class="Cfooter-cr">
+            <a rel="nofollow" target="_blank" href="javascript:;">关于乐蜂</a>
+            <a rel="nofollow" target="_blank" href="javascript:;">免责声明</a>
+            <a rel="nofollow" target="_blank" href="javascript:;">隐私声明</a>
+            <a rel="nofollow" target="_blank" href="javascript:;">版权声明</a>
+            <a rel="nofollow" target="_blank" href="javascript:;">招聘信息</a>
+            <a rel="nofollow" target="_blank" href="javascript:;">联系我们</a>
+            <a rel="nofollow" target="_blank" href="javascript:;">帮助中心</a>
+            <a rel="nofollow" target="_blank" href="javascript:;">友情链接</a> <br />
+            <span>Copyright <b>&copy;</b> 2008-2016 Lefeng.com All Rights Reserved.</span>
+            <span>乐蜂（上海）信息技术有限公司</span>
+            <a target="_blank" href="javascript:;">津ICP备15005555号-1</a>&nbsp;&nbsp;<span>京公网安备11010502014183</span>
+            <a rel="nofollow" target="_blank" href="javascript:;">营业执照</a>
+            <div class="Cfooter-cr-img">
+                <a id="___szfw_logo___" class="cxwz" rel="nofollow" target="_blank" href="javascript:;"></a>
+                <a class="kxwz" rel="nofollow" target="_blank" href="javascript:;"></a>
+                <a class="pjzxlm" rel="nofollow" target="_blank" href="javascript:;"></a>
+                <a class="itrust" rel="nofollow" target="_blank" href="javascript:;">中国互联网信用评价中心</a>
+                <a href="javascript:;" target="_blank" rel="nofollow" class="xfwq"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- f 89.50 -->
+    <script src="../script/thirdplugins/jquery.js"></script>
+    <script src="../script/thirdplugins/jquery.cookie.js"></script>
+    <script src="../script/js/mouseover.js"></script>
+    <script src="../script/js/login.js"></script>
+</body>
+
+</html>
